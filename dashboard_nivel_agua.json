@@ -1,0 +1,247 @@
+[
+    {
+        "id": "311735ee0e132916",
+        "type": "tab",
+        "label": "Fluxo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6f52d06185083317",
+        "type": "serial in",
+        "z": "311735ee0e132916",
+        "name": "",
+        "serial": "ac484b5adf97e1ad",
+        "x": 290,
+        "y": 420,
+        "wires": [
+            [
+                "5564e322c7e380da",
+                "2f7c8fc3d2e07933"
+            ]
+        ]
+    },
+    {
+        "id": "5564e322c7e380da",
+        "type": "ui-gauge",
+        "z": "311735ee0e132916",
+        "name": "gauge_nível",
+        "group": "6bbd6fb5863e0919",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-tank",
+        "gstyle": "needle",
+        "title": "Nível de água",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "Litros",
+        "icon": "",
+        "prefix": "",
+        "suffix": " L",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#3584e4",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "1.14",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 490,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2f7c8fc3d2e07933",
+        "type": "ui-chart",
+        "z": "311735ee0e132916",
+        "group": "6bbd6fb5863e0919",
+        "name": "Dados Históricos de nível de água",
+        "label": "Dados Históricos",
+        "order": 2,
+        "chartType": "line",
+        "category": "",
+        "categoryType": "none",
+        "xAxisLabel": "Tempo",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "Litros",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "1.5",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": "2",
+        "removeOlderUnit": "60",
+        "removeOlderPoints": "20",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
+        "className": "",
+        "interpolation": "bezier",
+        "x": 560,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac484b5adf97e1ad",
+        "type": "serial-port",
+        "name": "ESP32",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": 8,
+        "parity": "none",
+        "stopbits": 1,
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": 10000
+    },
+    {
+        "id": "6bbd6fb5863e0919",
+        "type": "ui-group",
+        "name": "Nível de água no reservatório",
+        "page": "32b9539d1b0a8458",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "32b9539d1b0a8458",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "ee4bf8b437b37f5e",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "3b2c1feb0c92a625",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ee4bf8b437b37f5e",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "3b2c1feb0c92a625",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "7a45003a8834a9d3",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-node-serialport": "2.0.3",
+            "@flowfuse/node-red-dashboard": "1.26.0"
+        }
+    }
+]
